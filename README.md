@@ -43,9 +43,18 @@ If you want to run while checking if the process is still up and restarting it i
 $ ./start.sh 
 ```
 
+To check if your bot is running, it should be in the slack workspace like this:
+![](/MitreAttack/mitrebotrunning.png)
+
+If something went wrong, and the bot is offline it will show as:
+![](/MitreAttack/mitrebotnotrunning.png)
+
 # Usage:
 - In any channel the bot is on, type:
 @mitreattackbot [tech|soft|group|searchtech] [OPTION] [NAME]
+
+For example:
+![](/MitreAttack/usageexample.png)
 
 # tech: Search for a technique in Mitre's database.
 - OPTION: 
