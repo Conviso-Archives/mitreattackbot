@@ -48,7 +48,9 @@ $ export SLACK_BOT_TOKEN=[YOUR BOT AUTHENTICATION TOKEN HERE]
 Now, if you didnt install slackclient run 
 ```sh
 $ pip install -r requirements.txt
-``` and run your bot!
+```
+
+ and run your bot!
 
 ```sh
 $ python mitreattackbot.py
