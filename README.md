@@ -13,7 +13,7 @@ If you decide for any other name, to use your bot you have to type @[YOUR BOT NA
 
 Now, if you plan on running this on a server, skip the virtualenv part. If you are running it locally, follow these steps:
 
-#VirtualEnv:
+# VirtualEnv:
 
 On a shell, type:
 ```sh
@@ -22,12 +22,14 @@ $ source mitreattackbot/bin/activate
 ```
 To create your isolated python environment. Its better this way.
 
-#Running the bot:
+# Running the bot:
 
 Export your bot authentication code: 
 ```sh
 $ export SLACK_BOT_TOKEN=[YOUR BOT AUTHENTICATION CODE HERE]
 ```
+
+Now to install the slack client and run your bot!
 
 ```sh
 $ pip install slackclient
