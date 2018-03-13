@@ -11,6 +11,13 @@ First you have to create your Slack APP. If you are new to slack I suggest follo
 After you created your app and your bot, be sure to name the bot mitreattackbot for ease of use!
 If you decide for any other name, to use your bot you have to type @[YOUR BOT NAME] [tech|soft|group|searchtech] [OPTION] [NAME]
 
+Then run:
+```sh
+$ pip install -r requirements.txt
+```
+
+To install the dependencies
+
 Now, if you plan on running this on a server, skip the virtualenv part. If you are running it locally, follow these steps:
 
 # VirtualEnv:
@@ -38,11 +45,12 @@ Export your bot authentication token:
 $ export SLACK_BOT_TOKEN=[YOUR BOT AUTHENTICATION TOKEN HERE]
 ```
 
-Now to install the slack client and run your bot!
+Now, if you didnt install slackclient run 
+```sh
+$ pip install -r requirements.txt
+``` and run your bot!
 
 ```sh
-$ pip install slackclient
-
 $ python mitreattackbot.py
 ```
 
