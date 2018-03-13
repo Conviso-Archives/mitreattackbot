@@ -60,69 +60,69 @@ For example:
 
 # tech: Search for a technique in Mitre's database.
 - OPTION: 
-	-groups: Show groups that use the technique. EX: tech groups powershell
+	-groups: Show groups that use the technique. e.g.: tech groups powershell
 	
-	-id: Shows the technique ID. EX: tech id powershell
+	-id: Shows the technique ID. e.g.: tech id powershell
 	
-	-title: Shows the technique title. EX: tech title input capture
+	-title: Shows the technique title. e.g.: tech title input capture
 	
-	-desc: Shows the technique technical description. EX: tech desc input capture
+	-desc: Shows the technique technical description. e.g.: tech desc input capture
 	
-	-url: Shows the technique's URL. EX: tech url email collection
+	-url: Shows the technique's URL. e.g.: tech url email collection
 	
-	-sources: Shows the data sources for the technique. EX: tech sources powershell
+	-sources: Shows the data sources for the technique. e.g.: tech sources powershell
 	
-	-tactics: Shows  the technique's tactics. EX: tech tactics software packing
+	-tactics: Shows  the technique's tactics. e.g.: tech tactics software packing
 	
-	-soft: Shows software related to the technique. EX: tech soft powershell
+	-soft: Shows software related to the technique. e.g.: tech soft powershell
 	
-	-all: Shows every technique in the database. EX: tech all
+	-all: Shows every technique in the database. e.g.: tech all
 	
-	-No option: Searches for techniques with NAME in the name. Returns a list if more than one technique contains NAME or shows every detail from a Technique if it returns only one. EX: tech shell
+	-No option: Searches for techniques with NAME in the name. Returns a list if more than one technique contains NAME or shows every detail from a Technique if it returns only one. e.g.: tech shell
 	
 
 # soft: Search for a software in Mitre's database.
 - OPTION: 
-	-groups: Show groups that use the software. EX: soft groups mivast
+	-groups: Show groups that use the software. e.g.: soft groups mivast
 	
-	-id: Shows the software ID. EX: soft id mivast
+	-id: Shows the software ID. e.g.: soft id mivast
 	
-	-title: Shows the software title. EX: soft title mivast
+	-title: Shows the software title. e.g.: soft title mivast
 	
-	-desc: Shows the software description. EX: soft desc mivast
+	-desc: Shows the software description. e.g.: soft desc mivast
 	
-	-url: Shows the software's URL. EX: soft url sykipot
+	-url: Shows the software's URL. e.g.: soft url sykipot
 	
-	-aliases: Shows the aliases for the software. EX: soft aliases sykipot
+	-aliases: Shows the aliases for the software. e.g.: soft aliases sykipot
 	
-	-tech: Shows  the software's techniques. EX: soft tech sykipot
+	-tech: Shows  the software's techniques. e.g.: soft tech sykipot
 	
-	-all: Shows every software in the database. EX: soft all
+	-all: Shows every software in the database. e.g.: soft all
 	
-	-No option: Searches for softwares with NAME in the name. Returns a list if more than one software contains NAME or shows every detail from a software if it returns only one. EX: soft flipside
+	-No option: Searches for softwares with NAME in the name. Returns a list if more than one software contains NAME or shows every detail from a software if it returns only one. e.g.: soft flipside
 	
 # group: Search for a group in Mitre's database.
 - OPTION: 
-	-soft: Show softwares that the group uses. EX: group soft taidoor
+	-soft: Show softwares that the group uses. e.g.: group soft taidoor
 	
-	-id: Shows the group's ID. EX: group id taidoor
+	-id: Shows the group's ID. e.g.: group id taidoor
 	
-	-title: Shows the group's title. EX: group title taidoor
+	-title: Shows the group's title. e.g.: group title taidoor
 	
-	-desc: Shows the group's description. EX: group desc taidoor
+	-desc: Shows the group's description. e.g.: group desc taidoor
 	
-	-url: Shows the group's URL. EX: group url taidoor
+	-url: Shows the group's URL. e.g.: group url taidoor
 	
-	-aliases: Shows the aliases for the group. EX: group aliases taidoor
+	-aliases: Shows the aliases for the group. e.g.: group aliases taidoor
 	
-	-tech: Shows  the group's techniques. EX: group tech taidoor
+	-tech: Shows  the group's techniques. e.g.: group tech taidoor
 	
-	-all: Shows every group in the database. EX: group all
+	-all: Shows every group in the database. e.g.: group all
 	
-	-No option: Searches for groups with NAME in the name. Returns a list if more than one group contains NAME or shows every detail from a group if it returns only one. EX: group taidoor
+	-No option: Searches for groups with NAME in the name. Returns a list if more than one group contains NAME or shows every detail from a group if it returns only one. e.g.: group taidoor
 	
 	
 # searchtech: Searches for a technique with the given parameters and fields. So far it only accepts th fiels "data" e "tactics"
 - USO: @mitreattackbot searchtech [FIELD] [PARAMETER] [FIELD] [PARAMETER] ... [FIELD] [PARAMETER]
 
-	EX: searchtech data registry tactics execution
+	e.g.: searchtech data registry tactics execution
