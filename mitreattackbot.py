@@ -76,7 +76,6 @@ def handle_command(command, channel):
 					search_str = str(" ".join(cmd_list))
 					data_returned = att.findTechnique(search_str)
 					if type(data_returned) is list:
-						pre_return_str = None
 						default_response = "Your request returned more than one technique and i dont know from which you want the data of. Please be more specific. If you need, find out the full name of the technique by typing \"tech NAME\" and redo the question using the full name please."
 					else:
 						pre_return_str = str(data_returned.groups)
@@ -87,7 +86,6 @@ def handle_command(command, channel):
 					search_str = str(" ".join(cmd_list))
 					data_returned = att.findTechnique(search_str)
 					if type(data_returned) is list:
-						pre_return_str = None
 						default_response = "Your request returned more than one technique and i dont know from which you want the data of. Please be more specific. If you need, find out the full name of the technique by typing \"tech NAME\" and redo the question using the full name please."
 					else:
 						pre_return_str = str(data_returned.ID)
@@ -98,7 +96,6 @@ def handle_command(command, channel):
 					search_str = str(" ".join(cmd_list))
 					data_returned = att.findTechnique(search_str)
 					if type(data_returned) is list:
-						pre_return_str = None
 						default_response = "Your request returned more than one technique and i dont know from which you want the data of. Please be more specific. If you need, find out the full name of the technique by typing \"tech NAME\" and redo the question using the full name please."
 					else:
 						pre_return_str = str(data_returned.displaytitle)
@@ -109,7 +106,6 @@ def handle_command(command, channel):
 					search_str = str(" ".join(cmd_list))
 					data_returned = att.findTechnique(search_str)
 					if type(data_returned) is list:
-						pre_return_str = None
 						default_response = "Your request returned more than one technique and i dont know from which you want the data of. Please be more specific. If you need, find out the full name of the technique by typing \"tech NAME\" and redo the question using the full name please."
 					else:
 						pre_return_str = str(data_returned.technical_description)
@@ -120,7 +116,6 @@ def handle_command(command, channel):
 					search_str = str(" ".join(cmd_list))
 					data_returned = att.findTechnique(search_str)
 					if type(data_returned) is list:
-						pre_return_str = None
 						default_response = "Your request returned more than one technique and i dont know from which you want the data of. Please be more specific. If you need, find out the full name of the technique by typing \"tech NAME\" and redo the question using the full name please."
 					else:
 						pre_return_str = str(data_returned.full_url)
@@ -131,7 +126,6 @@ def handle_command(command, channel):
 					search_str = str(" ".join(cmd_list))
 					data_returned = att.findTechnique(search_str)
 					if type(data_returned) is list:
-						pre_return_str = None
 						default_response = "Your request returned more than one technique and i dont know from which you want the data of. Please be more specific. If you need, find out the full name of the technique by typing \"tech NAME\" and redo the question using the full name please."
 					else:
 						pre_return_str = str(data_returned.data_sources)
@@ -142,7 +136,6 @@ def handle_command(command, channel):
 					search_str = str(" ".join(cmd_list))
 					data_returned = att.findTechnique(search_str)
 					if type(data_returned) is list:
-						pre_return_str = None
 						default_response = "Your request returned more than one technique and i dont know from which you want the data of. Please be more specific. If you need, find out the full name of the technique by typing \"tech NAME\" and redo the question using the full name please."
 					else:
 						pre_return_str = str(data_returned.tactics)
@@ -153,7 +146,6 @@ def handle_command(command, channel):
 					search_str = str(" ".join(cmd_list))
 					data_returned = att.findTechnique(search_str)
 					if type(data_returned) is list:
-						pre_return_str = None
 						default_response = "Your request returned more than one technique and i dont know from which you want the data of. Please be more specific. If you need, find out the full name of the technique by typing \"tech NAME\" and redo the question using the full name please."
 					else:
 						pre_return_str = str(data_returned.software)
@@ -179,7 +171,6 @@ def handle_command(command, channel):
 					search_str = str(" ".join(cmd_list))
 					data_returned = att.findGroup(search_str)
 					if type(data_returned) is list:
-						pre_return_str = None
 						default_response = "Your request returned more than one group and i dont know from which you want the data of. Please be more specific. If you need, find out the full name of the group by typing \"group NAME\" and redo the question using the full name please."
 					else:
 						pre_return_str = str(data_returned.techniques)
@@ -190,7 +181,6 @@ def handle_command(command, channel):
 					search_str = str(" ".join(cmd_list))
 					data_returned = att.findGroup(search_str)
 					if type(data_returned) is list:
-						pre_return_str = None
 						default_response = "Your request returned more than one group and i dont know from which you want the data of. Please be more specific. If you need, find out the full name of the group by typing \"group NAME\" and redo the question using the full name please."
 					else:
 						pre_return_str = str(data_returned.ID)
@@ -201,7 +191,6 @@ def handle_command(command, channel):
 					search_str = str(" ".join(cmd_list))
 					data_returned = att.findGroup(search_str)
 					if type(data_returned) is list:
-						pre_return_str = None
 						default_response = "Your request returned more than one group and i dont know from which you want the data of. Please be more specific. If you need, find out the full name of the group by typing \"group NAME\" and redo the question using the full name please."
 					else:
 						pre_return_str = str(data_returned.displaytitle)
@@ -212,7 +201,6 @@ def handle_command(command, channel):
 					search_str = str(" ".join(cmd_list))
 					data_returned = att.findGroup(search_str)
 					if type(data_returned) is list:
-						pre_return_str = None
 						default_response = "Your request returned more than one group and i dont know from which you want the data of. Please be more specific. If you need, find out the full name of the group by typing \"group NAME\" and redo the question using the full name please."
 					else:
 						pre_return_str = str(data_returned.description)
@@ -223,7 +211,6 @@ def handle_command(command, channel):
 					search_str = str(" ".join(cmd_list))
 					data_returned = att.findGroup(search_str)
 					if type(data_returned) is list:
-						pre_return_str = None
 						default_response = "Your request returned more than one group and i dont know from which you want the data of. Please be more specific. If you need, find out the full name of the group by typing \"group NAME\" and redo the question using the full name please."
 					else:
 						pre_return_str = str(data_returned.fullurl)
@@ -234,7 +221,6 @@ def handle_command(command, channel):
 					search_str = str(" ".join(cmd_list))
 					data_returned = att.findGroup(search_str)
 					if type(data_returned) is list:
-						pre_return_str = None
 						default_response = "Your request returned more than one group and i dont know from which you want the data of. Please be more specific. If you need, find out the full name of the group by typing \"group NAME\" and redo the question using the full name please."
 					else:
 						pre_return_str = str(data_returned.aliases)
@@ -245,7 +231,6 @@ def handle_command(command, channel):
 					search_str = str(" ".join(cmd_list))
 					data_returned = att.findGroup(search_str)
 					if type(data_returned) is list:
-						pre_return_str = None
 						default_response = "Your request returned more than one group and i dont know from which you want the data of. Please be more specific. If you need, find out the full name of the group by typing \"group NAME\" and redo the question using the full name please."
 					else:
 						pre_return_str = str(data_returned.software)
@@ -271,7 +256,6 @@ def handle_command(command, channel):
 					search_str = str(" ".join(cmd_list))
 					data_returned = att.findSoftware(search_str)
 					if type(data_returned) is list:
-						pre_return_str = None
 						default_response = "Your request returned more than one software and i dont know from which you want the data of. Please be more specific. If you need, find out the full name of the software by typing \"soft NAME\" and redo the question using the full name please."
 					else:
 						pre_return_str = str(data_returned.techniques)
@@ -282,7 +266,6 @@ def handle_command(command, channel):
 					search_str = str(" ".join(cmd_list))
 					data_returned = att.findSoftware(search_str)
 					if type(data_returned) is list:
-						pre_return_str = None
 						default_response = "Your request returned more than one software and i dont know from which you want the data of. Please be more specific. If you need, find out the full name of the software by typing \"soft NAME\" and redo the question using the full name please."
 					else:
 						pre_return_str = str(data_returned.ID)
@@ -293,7 +276,6 @@ def handle_command(command, channel):
 					search_str = str(" ".join(cmd_list))
 					data_returned = att.findSoftware(search_str)
 					if type(data_returned) is list:
-						pre_return_str = None
 						default_response = "Your request returned more than one software and i dont know from which you want the data of. Please be more specific. If you need, find out the full name of the software by typing \"soft NAME\" and redo the question using the full name please."
 					else:
 						pre_return_str = str(data_returned.displaytitle)
@@ -304,7 +286,6 @@ def handle_command(command, channel):
 					search_str = str(" ".join(cmd_list))
 					data_returned = att.findSoftware(search_str)
 					if type(data_returned) is list:
-						pre_return_str = None
 						default_response = "Your request returned more than one software and i dont know from which you want the data of. Please be more specific. If you need, find out the full name of the software by typing \"soft NAME\" and redo the question using the full name please."
 					else:
 						pre_return_str = str(data_returned.description)
@@ -315,7 +296,6 @@ def handle_command(command, channel):
 					search_str = str(" ".join(cmd_list))
 					data_returned = att.findSoftware(search_str)
 					if type(data_returned) is list:
-						pre_return_str = None
 						default_response = "Your request returned more than one software and i dont know from which you want the data of. Please be more specific. If you need, find out the full name of the software by typing \"soft NAME\" and redo the question using the full name please."
 					else:
 						pre_return_str = str(data_returned.fullurl)
@@ -326,7 +306,6 @@ def handle_command(command, channel):
 					search_str = str(" ".join(cmd_list))
 					data_returned = att.findSoftware(search_str)
 					if type(data_returned) is list:
-						pre_return_str = None
 						default_response = "Your request returned more than one software and i dont know from which you want the data of. Please be more specific. If you need, find out the full name of the software by typing \"soft NAME\" and redo the question using the full name please."
 					else:
 						pre_return_str = str(data_returned.aliases)
@@ -337,7 +316,6 @@ def handle_command(command, channel):
 					search_str = str(" ".join(cmd_list))
 					data_returned = att.findSoftware(search_str)
 					if type(data_returned) is list:
-						pre_return_str = None
 						default_response = "Your request returned more than one software and i dont know from which you want the data of. Please be more specific. If you need, find out the full name of the software by typing \"soft NAME\" and redo the question using the full name please."
 					else:
 						pre_return_str = str(data_returned.groups)
