@@ -53,7 +53,7 @@ def handle_command(command, channel):
     # This is where you start to implement more commands!
 
     if cmd_list[0] == 'help':
-		response = "To use me, type in channel i am currently on:\n@codefighters [tech|group|soft|searchtech] [OPTION] [NAME]\n For example: tech desc powershell\n Typing this will make me show you the technical description of the PowerShell technique!"
+		response = "To use me, type in channel i am currently on:\n@mitreattackbot [tech|group|soft|searchtech] [OPTION] [NAME]\n For example: tech desc powershell\n Typing this will make me show you the technical description of the PowerShell technique!"
 
     if cmd_list[0] == 'searchtech':
 		pre_return_str = None
