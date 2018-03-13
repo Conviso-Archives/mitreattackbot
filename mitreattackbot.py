@@ -47,10 +47,7 @@ def handle_command(command, channel):
     # Finds and executes the given command, filling in response
     response = None
     
-    #isso aqui ta separando os comandos que eu mando pro bot. vou pegar os comandos e fazer o if grande
     cmd_list = str(command.encode('ascii', 'replace')).split()
-    
-    # This is where you start to implement more commands!
 
     if cmd_list[0] == 'help':
 		response = "To use me, type in channel i am currently on:\n@mitreattackbot [tech|group|soft|searchtech] [OPTION] [NAME]\n For example: tech desc powershell\n Typing this will make me show you the technical description of the PowerShell technique!"
@@ -59,7 +56,6 @@ def handle_command(command, channel):
 		pre_return_str = None
 		if len(cmd_list) > 1:
 			if len(cmd_list)%2 == 1:
-				#att.search([{'field':'data sources','value':'registry'},{'field':'tactics','value':'execution'}]) string de exemplo
 				cmd_list.remove("searchtech")
 				search_list = []
 				for i in range(0, len(cmd_list), 2):
