@@ -44,9 +44,11 @@ $ ./start.sh
 ```
 
 To check if your bot is running, it should be in the slack workspace like this:
+
 ![](/MitreAttack/mitrebotrunning.png)
 
 If something went wrong, and the bot is offline it will show as:
+
 ![](/MitreAttack/mitrebotnotrunning.png)
 
 # Usage:
