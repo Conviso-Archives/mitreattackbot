@@ -37,7 +37,7 @@ $ pip install slackclient
 $ python mitreattackbot.py
 ```
 
-If you want to run while checking if the process is still up and restarting it if it crashes tun the script:
+If you want to run while checking if the process is still up and restarting it if it crashes run the script:
 
 ```sh
 $ ./start.sh 
