@@ -20,7 +20,7 @@ To install the dependencies
 
 Now, if you plan on running this on a server, skip the virtualenv part. If you are running it locally, follow these steps:
 
-# VirtualEnv:
+## VirtualEnv:
 
 On a shell, type:
 ```sh
@@ -38,7 +38,7 @@ $	pgrep -f "python mitreattackbot.py" > /dev/null || python mitreattackbot.py
 $ done
 ```
 
-# Running the bot:
+## Running the bot:
 
 Export your bot authentication token: 
 ```sh
@@ -70,14 +70,14 @@ If something went wrong, and the bot is offline it will show as:
 
 ![](/MitreAttack/mitrebotnotrunning.png)
 
-# Usage:
+# USAGE:
 - In any channel the bot is on, type:
 @mitreattackbot [tech|soft|group|searchtech] [OPTION] [NAME]
 
 For example:
 ![](/MitreAttack/usageexample.png)
 
-# tech: Search for a technique in Mitre's database.
+## tech: Search for a technique in Mitre's database.
 - OPTION: 
 	-groups: Show groups that use the technique. e.g.: tech groups powershell
 	
@@ -100,7 +100,7 @@ For example:
 	-No option: Searches for techniques with NAME in the name. Returns a list if more than one technique contains NAME or shows every detail from a Technique if it returns only one. e.g.: tech shell
 	
 
-# soft: Search for a software in Mitre's database.
+## soft: Search for a software in Mitre's database.
 - OPTION: 
 	-groups: Show groups that use the software. e.g.: soft groups mivast
 	
@@ -120,7 +120,7 @@ For example:
 	
 	-No option: Searches for softwares with NAME in the name. Returns a list if more than one software contains NAME or shows every detail from a software if it returns only one. e.g.: soft flipside
 	
-# group: Search for a group in Mitre's database.
+## group: Search for a group in Mitre's database.
 - OPTION: 
 	-soft: Show softwares that the group uses. e.g.: group soft taidoor
 	
@@ -141,7 +141,7 @@ For example:
 	-No option: Searches for groups with NAME in the name. Returns a list if more than one group contains NAME or shows every detail from a group if it returns only one. e.g.: group taidoor
 	
 	
-# searchtech: Searches for a technique with the given parameters and fields. So far it only accepts th fiels "data" e "tactics"
+## searchtech: Searches for a technique with the given parameters and fields. So far it only accepts th fiels "data" e "tactics"
 - USO: @mitreattackbot searchtech [FIELD] [PARAMETER] [FIELD] [PARAMETER] ... [FIELD] [PARAMETER]
 
 	e.g.: searchtech data registry tactics execution

@@ -12,8 +12,9 @@ slack_client = SlackClient(os.environ.get('SLACK_BOT_TOKEN'))
 starterbot_id = None
 
 # constants
-RTM_READ_DELAY = 1 # 1 second delay between reading from RTM
+RTM_READ_DELAY = 1  # 1 second delay between reading from RTM
 MENTION_REGEX = "^<@(|[WU].+?)>(.*)"
+
 
 def parse_bot_commands(slack_events):
 	"""
@@ -28,6 +29,7 @@ def parse_bot_commands(slack_events):
 				return message, event["channel"]
 	return None, None
 
+
 def parse_direct_mention(message_text):
 	"""
 		Finds a direct mention (a mention that is at the beginning) in message text
@@ -37,25 +39,25 @@ def parse_direct_mention(message_text):
 	# the first group contains the username, the second group contains the remaining message
 	return (matches.group(1), matches.group(2).strip()) if matches else (None, None)
 
+
 def handle_command(command, channel):
 	"""
 		Executes bot command if the command is known
 	"""
 	# Default response is help text for the user
-	#default_response = "Not sure what you mean. Try *{}*.".format(EXAMPLE_COMMAND)
 	default_response = "I could not understand your command, i think you may have given me too few parameters or maybe you typed something wrong. Try again using: [tech|soft|group|searchtech] [Option] [Name]"
 	# Finds and executes the given command, filling in response
 	response = None
-	
-	cmd_list = str(command.encode('ascii', 'replace')).split()
 
+	cmd_list = str(command.encode('ascii', 'replace')).split()
+	list_len = len(cmd_list)
 	if cmd_list[0] == 'help':
 		response = "To use me, type in channel i am currently on:\n@mitreattackbot [tech|group|soft|searchtech] [OPTION] [NAME]\n For example: tech desc powershell\n Typing this will make me show you the technical description of the PowerShell technique!"
 
 	if cmd_list[0] == 'searchtech':
 		pre_return_str = None
-		if len(cmd_list) > 1:
-			if len(cmd_list)%2 == 1:
+		if list_len > 1:
+			if list_len % 2 == 1:
 				cmd_list.remove("searchtech")
 				search_list = []
 				for i in range(0, len(cmd_list), 2):
@@ -63,12 +65,12 @@ def handle_command(command, channel):
 				response = str(att.search(search_list))
 			else:
 				response = "To use the searchtech option i must have a field and a value, if you dont tell me a field and a value i cannnot search things for you. Try searchtech [FIELD] [VALUE]"
-			
+
 	if cmd_list[0] == 'tech':
 		pre_return_str = None
-		if len(cmd_list) > 1:
+		if list_len > 1:
 			if cmd_list[1] == 'groups':
-				if len(cmd_list) > 2:
+				if list_len > 2:
 					cmd_list.remove("tech")
 					cmd_list.remove("groups")
 					search_str = str(" ".join(cmd_list))
@@ -79,7 +81,7 @@ def handle_command(command, channel):
 					else:
 						pre_return_str = str(data_returned.groups)
 			elif cmd_list[1] == 'id':
-				if len(cmd_list) > 2:
+				if list_len > 2:
 					cmd_list.remove("tech")
 					cmd_list.remove("id")
 					search_str = str(" ".join(cmd_list))
@@ -90,7 +92,7 @@ def handle_command(command, channel):
 					else:
 						pre_return_str = str(data_returned.ID)
 			elif cmd_list[1] == 'title':
-				if len(cmd_list) > 2:
+				if list_len > 2:
 					cmd_list.remove("tech")
 					cmd_list.remove("title")
 					search_str = str(" ".join(cmd_list))
@@ -101,7 +103,7 @@ def handle_command(command, channel):
 					else:
 						pre_return_str = str(data_returned.displaytitle)
 			elif cmd_list[1] == 'desc':
-				if len(cmd_list) > 2:
+				if list_len > 2:
 					cmd_list.remove("tech")
 					cmd_list.remove("desc")
 					search_str = str(" ".join(cmd_list))
@@ -112,7 +114,7 @@ def handle_command(command, channel):
 					else:
 						pre_return_str = str(data_returned.technical_description)
 			elif cmd_list[1] == 'url':
-				if len(cmd_list) > 2:
+				if list_len > 2:
 					cmd_list.remove("tech")
 					cmd_list.remove("url")
 					search_str = str(" ".join(cmd_list))
@@ -123,7 +125,7 @@ def handle_command(command, channel):
 					else:
 						pre_return_str = str(data_returned.full_url)
 			elif cmd_list[1] == 'sources':
-				if len(cmd_list) > 2:
+				if list_len > 2:
 					cmd_list.remove("tech")
 					cmd_list.remove("sources")
 					search_str = str(" ".join(cmd_list))
@@ -134,7 +136,7 @@ def handle_command(command, channel):
 					else:
 						pre_return_str = str(data_returned.data_sources)
 			elif cmd_list[1] == 'tactics':
-				if len(cmd_list) > 2:
+				if list_len > 2:
 					cmd_list.remove("tech")
 					cmd_list.remove("tactics")
 					search_str = str(" ".join(cmd_list))
@@ -145,7 +147,7 @@ def handle_command(command, channel):
 					else:
 						pre_return_str = str(data_returned.tactics)
 			elif cmd_list[1] == 'soft':
-				if len(cmd_list) > 2:
+				if list_len > 2:
 					cmd_list.remove("tech")
 					cmd_list.remove("soft")
 					search_str = str(" ".join(cmd_list))
@@ -169,9 +171,9 @@ def handle_command(command, channel):
 
 	if cmd_list[0] == 'group':
 		pre_return_str = None
-		if len(cmd_list) > 1:
+		if list_len > 1:
 			if cmd_list[1] == 'techniques':
-				if len(cmd_list) > 2:
+				if list_len > 2:
 					cmd_list.remove("group")
 					cmd_list.remove("techniques")
 					search_str = str(" ".join(cmd_list))
@@ -182,7 +184,7 @@ def handle_command(command, channel):
 					else:
 						pre_return_str = str(data_returned.techniques)
 			elif cmd_list[1] == 'id':
-				if len(cmd_list) > 2:
+				if list_len > 2:
 					cmd_list.remove("group")
 					cmd_list.remove("id")
 					search_str = str(" ".join(cmd_list))
@@ -193,7 +195,7 @@ def handle_command(command, channel):
 					else:
 						pre_return_str = str(data_returned.ID)
 			elif cmd_list[1] == 'title':
-				if len(cmd_list) > 2:
+				if list_len > 2:
 					cmd_list.remove("group")
 					cmd_list.remove("title")
 					search_str = str(" ".join(cmd_list))
@@ -204,7 +206,7 @@ def handle_command(command, channel):
 					else:
 						pre_return_str = str(data_returned.displaytitle)
 			elif cmd_list[1] == 'desc':
-				if len(cmd_list) > 2:
+				if list_len > 2:
 					cmd_list.remove("group")
 					cmd_list.remove("desc")
 					search_str = str(" ".join(cmd_list))
@@ -215,7 +217,7 @@ def handle_command(command, channel):
 					else:
 						pre_return_str = str(data_returned.description)
 			elif cmd_list[1] == 'url':
-				if len(cmd_list) > 2:
+				if list_len > 2:
 					cmd_list.remove("group")
 					cmd_list.remove("url")
 					search_str = str(" ".join(cmd_list))
@@ -226,7 +228,7 @@ def handle_command(command, channel):
 					else:
 						pre_return_str = str(data_returned.fullurl)
 			elif cmd_list[1] == 'aliases':
-				if len(cmd_list) > 2:
+				if list_len > 2:
 					cmd_list.remove("group")
 					cmd_list.remove("aliases")
 					search_str = str(" ".join(cmd_list))
@@ -237,7 +239,7 @@ def handle_command(command, channel):
 					else:
 						pre_return_str = str(data_returned.aliases)
 			elif cmd_list[1] == 'soft':
-				if len(cmd_list) > 2:
+				if list_len > 2:
 					cmd_list.remove("group")
 					cmd_list.remove("soft")
 					search_str = str(" ".join(cmd_list))
@@ -258,12 +260,12 @@ def handle_command(command, channel):
 				else:
 					pre_return_str = str(data_returned) + "\n\nID: " + str(data_returned.ID) + "\n\nTitle:" + str(data_returned.displaytitle) + "\n\nTechnical Description: " + str(data_returned.description) + "\n\nURL: " + str(data_returned.fullurl) + "\n\nTechniques: " + str(data_returned.techniques).replace("u'", "") + "\n\nSoftware: " + str(data_returned.software).replace("u'", "") + "\n\nAliases: " + str(data_returned.aliases).replace("u'", "") + "\n"
 			response = pre_return_str
-			
+
 	if cmd_list[0] == 'soft':
 		pre_return_str = None
-		if len(cmd_list) > 1:
+		if list_len > 1:
 			if cmd_list[1] == 'techniques':
-				if len(cmd_list) > 2:
+				if list_len > 2:
 					cmd_list.remove("soft")
 					cmd_list.remove("techniques")
 					search_str = str(" ".join(cmd_list))
@@ -274,7 +276,7 @@ def handle_command(command, channel):
 					else:
 						pre_return_str = str(data_returned.techniques)
 			elif cmd_list[1] == 'id':
-				if len(cmd_list) > 2:
+				if list_len > 2:
 					cmd_list.remove("soft")
 					cmd_list.remove("id")
 					search_str = str(" ".join(cmd_list))
@@ -285,7 +287,7 @@ def handle_command(command, channel):
 					else:
 						pre_return_str = str(data_returned.ID)
 			elif cmd_list[1] == 'title':
-				if len(cmd_list) > 2:
+				if list_len > 2:
 					cmd_list.remove("soft")
 					cmd_list.remove("title")
 					search_str = str(" ".join(cmd_list))
@@ -296,7 +298,7 @@ def handle_command(command, channel):
 					else:
 						pre_return_str = str(data_returned.displaytitle)
 			elif cmd_list[1] == 'desc':
-				if len(cmd_list) > 2:
+				if list_len > 2:
 					cmd_list.remove("soft")
 					cmd_list.remove("desc")
 					search_str = str(" ".join(cmd_list))
@@ -307,7 +309,7 @@ def handle_command(command, channel):
 					else:
 						pre_return_str = str(data_returned.description)
 			elif cmd_list[1] == 'url':
-				if len(cmd_list) > 2:
+				if list_len > 2:
 					cmd_list.remove("soft")
 					cmd_list.remove("url")
 					search_str = str(" ".join(cmd_list))
@@ -318,7 +320,7 @@ def handle_command(command, channel):
 					else:
 						pre_return_str = str(data_returned.fullurl)
 			elif cmd_list[1] == 'aliases':
-				if len(cmd_list) > 2:
+				if list_len > 2:
 					cmd_list.remove("soft")
 					cmd_list.remove("aliases")
 					search_str = str(" ".join(cmd_list))
@@ -329,7 +331,7 @@ def handle_command(command, channel):
 					else:
 						pre_return_str = str(data_returned.aliases)
 			elif cmd_list[1] == 'groups':
-				if len(cmd_list) > 2:
+				if list_len > 2:
 					cmd_list.remove("soft")
 					cmd_list.remove("groups")
 					search_str = str(" ".join(cmd_list))
@@ -371,4 +373,3 @@ if __name__ == "__main__":
 			time.sleep(RTM_READ_DELAY)
 	else:
 		print("Connection failed. Exception traceback printed above.")
-
