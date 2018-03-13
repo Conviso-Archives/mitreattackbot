@@ -6,15 +6,40 @@ We use MitreAttack: https://github.com/MalwareSoup/MitreAttack
 
 # 	INSTALLING THE APP: 
 
-Export your bot authentication code: export SLACK_BOT_TOKEN=[YOUR BOT AUTHENTICATION CODE HERE]
+First you have to create your Slack APP. If you are new to slack i suggest following this neat tutorial: https://www.fullstackpython.com/blog/build-first-slack-bot-python.html
 
-pip install slackclient
+After you created your app and your bot, be sure to name the bot mitreattackbot for ease of use!
+If you decide for any other name, to use your bot you have to type @[YOUR BOT NAME] [tech|soft|group|searchtech] [OPTION] [NAME]
 
-python mitreattackbot.py
+Now, if you plan on running this on a server, skip the virtualenv part. If you are running it locally, follow these steps:
+
+#VirtualEnv:
+
+On a shell, type:
+```sh
+$ virtualenv mitreattackbot
+$ source mitreattackbot/bin/activate
+```
+To create your isolated python environment. Its better this way.
+
+#Running the bot:
+
+Export your bot authentication code: 
+```sh
+$ export SLACK_BOT_TOKEN=[YOUR BOT AUTHENTICATION CODE HERE]
+```
+
+```sh
+$ pip install slackclient
+
+$ python mitreattackbot.py
+```
 
 If you want to run while checking if the process is still up and restarting it if it crashes tun the script:
 
-Run start.sh 
+```sh
+$ ./start.sh 
+```
 
 # Usage:
 - In any channel the bot is on, type:
